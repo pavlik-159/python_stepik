@@ -1,0 +1,35 @@
+browser.find_element(*** "")
+
+ поиск по имени тэга   <option selected>--</option>       (By.TAG_NAME, "selected")
+(By.NAME, "last_name")
+(By.XPATH, "/html/body/div[1]/form/div[3]/input")
+(By.ID, "country")
+(By.CSS_SELECTOR, "button.btn")
+(By.CSS_SELECTOR, , "[value='python']")
+
+<label for="java">       --------> option1 = browser.find_element(By.CSS_SELECTOR, "[for='java']")
+                             option1.click()
+
+<select id="dropdown" class="custom-select">
+<option selected>--</option>
+<option value="1">Python</option>
+<option value="2">Java</option>
+<option value="3">JavaScript</option>
+
+поиск по видимому тексту  ----->    select.select_by_visible_text("text")
+поиск элемента и клик по нему (открыли дропдаун)   ------>      browser.find_element(By.TAG_NAME, "select").click()
+кликнули по элементу в дропдауне     ------>        browser.find_element(By.CSS_SELECTOR, "option:nth-child(2)").click()
+или ------>                                         browser.find_element(By.CSS_SELECTOR, "[value='1']").click()
+
+ # ищем и кликаем на элемент значение тега которого равно результату нашей формулы
+    browser.find_element(By.CSS_SELECTOR, f"[value='{result}']").click()
+
+Если ищем ссылку по ее названию то: (название линка "Degree Symbol in Math")
+
+По полному названию:
+link = browser.find_element(By.LINK_TEXT, "Degree Symbol in Math")
+link.click()
+
+По части названия:
+link = browser.find_element(By.PARTIAL_LINK_TEXT, "Math")
+link.click()
